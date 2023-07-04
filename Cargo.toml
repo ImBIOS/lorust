@@ -10,27 +10,7 @@ documentation = "https://docs.rs/lorust"
 homepage = "https://github.com/ImBIOS/lorust"
 repository = "https://github.com/ImBIOS/lorust"
 include = ["Cargo.toml", "src/**/*"]
-keywords = [
-  "rust",
-  "utility",
-  "library",
-  "lodash",
-  "performance",
-  "extras",
-  "modularity",
-  "string",
-  "object",
-  "math",
-  "array",
-  "collection",
-  "date",
-  "function",
-  "lang",
-  "number",
-  "seq",
-  "util",
-  "utils",
-]
+keywords = ["utility", "library", "lodash", "performance", "extras"]
 categories = [
   "development-tools",
   "rust-patterns",
