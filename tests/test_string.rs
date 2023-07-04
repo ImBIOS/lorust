@@ -39,11 +39,11 @@ mod test_string {
 
     #[test]
     fn test_ends_with() {
-        assert_eq!(ends_with("abc", "c", None), true);
-        assert_eq!(ends_with("abc", "b", None), false);
-        assert_eq!(ends_with("abc", "b", Some(2)), true);
-        assert_eq!(ends_with("abc", "d", None), false);
-        assert_eq!(ends_with("abc", "abc", Some(3)), true);
+        assert!(ends_with("abc", "c", None));
+        assert!(!ends_with("abc", "b", None));
+        assert!(ends_with("abc", "b", Some(2)));
+        assert!(!ends_with("abc", "d", None));
+        assert!(ends_with("abc", "abc", Some(3)));
     }
 
     #[test]

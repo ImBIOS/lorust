@@ -30,3 +30,13 @@ We follow the flat function structure of **Lodash**, but the functions can be ca
 | `util`       | Utility functions to deal with Utilities (Not yet support)   |
 | `properties` | Utility functions to deal with Properties (Not yet support)  |
 | `methods`    | Utility functions to deal with Methods (Not yet support)     |
+
+## Contributing
+
+### Git Hooks
+
+We use [.githooks](./githooks) to manage git hooks. To enable the git hooks, run:
+
+```bash
+git config --local core.hooksPath .githooks/
+```
