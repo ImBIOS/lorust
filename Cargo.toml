@@ -1,0 +1,60 @@
+[package]
+name = "lorust"
+authors = ["Imamuzzaki Abu Salam <imamuzzaki@gmail.com>"]
+description = "Modern Rust utility library delivering modularity, performance & extras; or simply Rust version of Lodash"
+version = "0.1.0"
+edition = "2021"
+readme = "README.md"
+license-file = "LICENSE"
+documentation = "https://docs.rs/lorust"
+homepage = "https://github.com/ImBIOS/lorust"
+repository = "https://github.com/ImBIOS/lorust"
+include = ["Cargo.toml", "src/**/*"]
+keywords = [
+  "rust",
+  "utility",
+  "library",
+  "lodash",
+  "performance",
+  "extras",
+  "modularity",
+  "string",
+  "object",
+  "math",
+  "array",
+  "collection",
+  "date",
+  "function",
+  "lang",
+  "number",
+  "seq",
+  "util",
+  "utils",
+]
+categories = [
+  "development-tools",
+  "rust-patterns",
+  "algorithms",
+  "web-programming",
+  "mathematics",
+]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["math", "object", "string"]
+math = []
+object = ["serde_json"]
+string = ["unicode-normalization", "regex"]
+
+[dependencies.unicode-normalization]
+version = "0.1.17"
+optional = true
+
+[dependencies.regex]
+version = "1.5.4"
+optional = true
+
+[dependencies.serde_json]
+version = "1.0.66"
+optional = true
