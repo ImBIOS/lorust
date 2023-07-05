@@ -19,10 +19,10 @@ use unicode_normalization::UnicodeNormalization;
 /// ```rust
 /// use lorust::deburr;
 ///
-/// let deburred = deburr("déjà vu");
+/// let deburred = deburr("déjà vu".to_string());
 /// assert_eq!(deburred, "deja vu");
 /// ```
-pub fn deburr(input: &str) -> String {
+pub fn deburr(input: String) -> String {
     input
         .nfkd()
         .filter(|c| c.is_ascii() && !c.is_control())

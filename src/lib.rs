@@ -10,18 +10,14 @@
 //! [dependencies]
 //! lorust = "0.1.0"
 //! ```
-//!
-//! ## Functions Categorization
-//!
-//! We follow the flat function structure of **Lodash**, but the functions can be categorized into following areas:
-//!
-//! | Category     | Description                                                  |
-//! |--------------|--------------------------------------------------------------|
-//! | `string`     | Utility functions to deal with Strings                       |
-//! | `array`      | Utility functions to deal with Arrays (Not yet support)      |
-//! | `math`       | Utility functions to deal with Maths (Not yet support)       |
-//! | `object`     | Utility functions to deal with Objects (Not yet support)     |
-//!
+
+mod function;
+#[cfg(feature = "function")]
+pub use function::*;
+
+mod lang;
+#[cfg(feature = "lang")]
+pub use lang::*;
 
 mod math;
 #[cfg(feature = "math")]

@@ -7,22 +7,21 @@
 /// # Returns
 ///
 /// Returns a new string with the first character capitalized and the remaining characters in lowercase.
-/// If the input string is empty or None, returns None.
 ///
 /// # Example
 ///
 /// ```rust
 /// use lorust::capitalize;
 ///
-/// let capitalized = capitalize("FRED");
+/// let capitalized = capitalize("FRED".to_string());
 /// assert_eq!(capitalized, "Fred");
 /// ```
-pub fn capitalize(string: &str) -> String {
-    if let Some(first) = string.chars().next() {
-        let mut capitalized = first.to_uppercase().to_string();
-        capitalized.push_str(&string[1..].to_lowercase());
-        capitalized
-    } else {
-        String::new()
+pub fn capitalize(s: String) -> String {
+    let mut chars = s.chars();
+    match chars.next() {
+        None => String::new(),
+        Some(first) => {
+            first.to_uppercase().collect::<String>() + chars.as_str().to_lowercase().as_str()
+        }
     }
 }
