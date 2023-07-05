@@ -1,5 +1,5 @@
 #[cfg(test)]
-mod test_object {
+mod tests {
     use lorust::round;
 
     #[test]

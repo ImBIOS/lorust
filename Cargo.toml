@@ -3,6 +3,7 @@ name = "lorust"
 authors = ["Imamuzzaki Abu Salam <imamuzzaki@gmail.com>"]
 description = "Modern Rust utility library delivering modularity, performance & extras; or simply Rust version of Lodash"
 version = "0.1.0"
+rust-version = "1.70"
 edition = "2021"
 readme = "README.md"
 license = "MIT OR Apache-2.0"
@@ -22,19 +23,33 @@ categories = [
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-default = ["math", "object", "string"]
-math = []
-object = ["serde_json"]
-string = ["unicode-normalization", "regex"]
+default = ["function", "lang", "math", "object", "string"]
 
-[dependencies.unicode-normalization]
-version = "0.1.22"
-optional = true
+function = ["debounce"]
+debounce = ["log"]
 
-[dependencies.regex]
-version = "1.5.4"
-optional = true
+lang = ["is_number"]
+is_number = []
 
-[dependencies.serde_json]
-version = "1.0.100"
-optional = true
+math = ["round"]
+round = []
+
+object = ["get", "map_values", "merge", "pick", "set"]
+get = []
+map_values = []
+merge = ["serde_json"]
+pick = []
+set = []
+
+string = ["capitalize", "deburr", "ends_with", "kebab_case", "words"]
+capitalize = []
+deburr = ["unicode-normalization"]
+ends_with = []
+kebab_case = []
+words = ["regex"]
+
+[dependencies]
+serde_json = { version = "1.0.100", optional = true }
+regex = { version = "1.5.4", optional = true }
+unicode-normalization = { version = "0.1.22", optional = true }
+log = { version = "0.4.14", optional = true }

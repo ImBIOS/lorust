@@ -16,10 +16,10 @@
 /// ```rust
 /// use lorust::ends_with;
 ///
-/// let ends_with = ends_with("abc", "c", None);
-/// assert_eq!(ends_with, true);
+/// let ends_with = ends_with("abc".to_string(), "c".to_string(), None);
+/// assert!(ends_with);
 /// ```
-pub fn ends_with(string: &str, target: &str, position: Option<usize>) -> bool {
+pub fn ends_with(string: String, target: String, position: Option<usize>) -> bool {
     // Determine the position to end the search
     let end_position = match position {
         Some(pos) => pos.min(string.len()),

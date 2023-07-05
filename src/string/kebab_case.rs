@@ -16,21 +16,34 @@
 /// ```rust
 /// use lorust::kebab_case;
 ///
-/// let kebab_cased = kebab_case("Foo Bar");
+/// let kebab_cased = kebab_case("Foo Bar".to_string());
 /// assert_eq!(kebab_cased, "foo-bar");
-/// let kebab_cased = kebab_case("fooBar");
+/// let kebab_cased = kebab_case("fooBar".to_string());
 /// assert_eq!(kebab_cased, "foo-bar");
-/// let kebab_cased = kebab_case("__FOO_BAR__");
+/// let kebab_cased = kebab_case("__FOO_BAR__".to_string());
 /// assert_eq!(kebab_cased, "foo-bar");
 /// ```
-pub fn kebab_case(s: &str) -> String {
+pub fn kebab_case(s: String) -> String {
     use regex::Regex;
-    let s = s.trim_matches(|c: char| c.is_whitespace() || c == '_');
-    let re = Regex::new(r"([a-z0-9])([A-Z])").unwrap();
-    let s1 = re.replace_all(s, "$1-$2");
+
+    // Trim leading/trailing whitespace, underscores, and hyphens
+    let s = s.trim_matches(|c: char| c.is_whitespace() || c == '_' || c == '-');
+
+    // Replace underscore or space with hyphen
     let re = Regex::new(r"[\s_]+").unwrap();
-    let s2 = re.replace_all(&s1, "-");
+    let s = re.replace_all(s, "-");
+
+    // Convert camel case boundaries to hyphen
+    let re = Regex::new(r"([a-z0-9])([A-Z])").unwrap();
+    let s = re.replace_all(&s, "$1-$2");
+
+    // Convert double hyphens to single
     let re = Regex::new(r"-+").unwrap();
-    let s3 = re.replace_all(&s2, "-");
-    s3.to_lowercase()
+    let s = re.replace_all(&s, "-");
+
+    // Remove non-word and non-hyphen characters
+    let re = Regex::new(r"[^\w-]").unwrap();
+    let s = re.replace_all(&s, "");
+
+    s.to_lowercase()
 }
