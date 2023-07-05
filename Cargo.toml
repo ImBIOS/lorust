@@ -36,5 +36,5 @@ version = "1.5.4"
 optional = true
 
 [dependencies.serde_json]
-version = "1.0.66"
+version = "1.0.100"
 optional = true
