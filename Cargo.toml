@@ -28,7 +28,7 @@ object = ["serde_json"]
 string = ["unicode-normalization", "regex"]
 
 [dependencies.unicode-normalization]
-version = "0.1.17"
+version = "0.1.22"
 optional = true
 
 [dependencies.regex]
