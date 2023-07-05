@@ -2,7 +2,7 @@
 name = "lorust"
 authors = ["Imamuzzaki Abu Salam <imamuzzaki@gmail.com>"]
 description = "Modern Rust utility library delivering modularity, performance & extras; or simply Rust version of Lodash"
-version = "0.1.0"
+version = "0.2.0"
 rust-version = "1.70"
 edition = "2021"
 readme = "README.md"
