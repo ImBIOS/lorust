@@ -52,4 +52,4 @@ words = ["regex"]
 serde_json = { version = "1.0.100", optional = true }
 regex = { version = "1.8.4", optional = true }
 unicode-normalization = { version = "0.1.22", optional = true }
-log = { version = "0.4.14", optional = true }
+log = { version = "0.4.19", optional = true }
