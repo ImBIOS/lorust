@@ -49,7 +49,7 @@ kebab_case = []
 words = ["regex"]
 
 [dependencies]
-serde_json = { version = "1.0.100", optional = true }
+serde_json = { version = "1.0.106", optional = true }
 regex = { version = "1.9.5", optional = true }
 unicode-normalization = { version = "0.1.22", optional = true }
 log = { version = "0.4.20", optional = true }
